@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 
-var connetion = mysql.createConnection({
+var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
@@ -8,7 +8,7 @@ var connetion = mysql.createConnection({
   database: "burger_db",
 });
 
-connetion.connect(function (err) {
+connection.connect(function (err) {
   if (err) {
     console.log("error connecting: " + err.stack);
     return;
@@ -16,4 +16,4 @@ connetion.connect(function (err) {
   console.log("connected as id " + connection.threadId);
 });
 
-module.exports = connetion;
+module.exports = connection;
