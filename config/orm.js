@@ -1,7 +1,17 @@
 var connection = require("./connection.js");
 
 var orm = {
-  selectAll: function () {},
+  selectAll: function () {
+    var queryString = "SELECT * FROM ??";
+    connection.query(
+      queryString,
+      [tableInput, colToSearch, valOfCol],
+      function (err, result) {
+        if (err) throw err;
+        console.log(result);
+      }
+    );
+  },
   insertOne: function () {},
   updateOne: function () {},
 };
