@@ -8,19 +8,19 @@ var router = express.Router();
 
 // Create all the routes and set up logic within those routes where required
 router.get("/", function (req, res) {
-  burger.all("/", function (data) {
+  burger.selectAll(function (data) {
     var hbsObject = { burgers: data };
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
-router.post("/api/burgers", function (req, res) {
-  burger.create(["burger"], [req.body.burger], function (result) {
-    //Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
-});
+// router.post("/api/burgers", function (req, res) {
+//   burger.create(["burger"], [req.body.burger], function (result) {
+//     //Send back the ID of the new quote
+//     res.json({ id: result.insertId });
+//   });
+// });
 
 // router.put("/api/burgers/:id", function (req, res) {
 //   var condition = "id = " + req.params.id;

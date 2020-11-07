@@ -1,7 +1,13 @@
 var orm = require("../config/orm.js");
+var burger = {
+  selectAll: function (cb) {
+    orm.selectAll("burgers", function (res) {
+      cb(res);
+    });
+  },
 
-orm.selectAll();
-orm.updateOne();
-orm.insertOne();
+  // orm.updateOne();
+  // orm.insertOne();
+};
 
 module.exports = burger;
