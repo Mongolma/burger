@@ -17,8 +17,6 @@ $(function () {
       location.reload();
     });
   });
-});
-$(function () {
   $("#brgr").on("click", function (event) {
     // Make sure to preventDefault on a submit event
     event.stopPropagation();
@@ -35,6 +33,24 @@ $(function () {
     }).then(function () {
       console.log("created new burger");
       //Reload the page tp get the updated list
+      location.reload();
+    });
+  });
+  $(".change-status").on("click", function () {
+    var id = $(this).data("id");
+    var newStatus = $(this).data("newstatus");
+
+    var newStatusState = {
+      devour: newStatus,
+    };
+
+    //Send the put request
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: newStatusState,
+    }).then(function () {
+      console.log("changed order to ", newStatus);
+      //reload the page to get the updated list
       location.reload();
     });
   });

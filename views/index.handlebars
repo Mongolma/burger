@@ -10,6 +10,24 @@
 </ul>
 
 
+<li>
+    {{#each burger_name}}
+
+    <button class="change-status" data-id="{{id}}" data-newstatus="{{devour}}">
+        {{#if devour}} Devour it!{{/if}}
+    </button>
+    {{/each}}
+</li>
+
+<ul>
+    {{#each burger-name}}
+    {{#unless devour}}
+    {{> burgers devour=true}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+
 <h2>Add a Burger</h2>
 <form class="create-form">
 
