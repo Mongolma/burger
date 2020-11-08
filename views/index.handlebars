@@ -1,3 +1,15 @@
+<ul>
+    {{#each burgers}}
+    <li>
+        <p><span class="label">ID:</span>{{this.id}}</p>
+        <p><span class="label">Burger:</span>{{this.burger_name}}</p>
+
+        <button data-id="{{this.id}}" class="devourburger">Devour it!</button>
+    </li>
+    {{/each}}
+</ul>
+
+
 <h2>Add a Burger</h2>
 <form class="create-form">
 
@@ -5,17 +17,5 @@
         <label for="brgr">Burger:</label>
         <input type="text" id="brgr" name="name">
     </div>
-
-    <ul>
-        {{#each burgers}}
-        <li>
-            <p><span class="label">ID:</span>{{this.id}}</p>
-            <p><span class="label">Burger:</span>{{this.burger_name}}</p>
-
-            <button data-id="{{this.id}}" class="devourburger">Devour it!</button>
-        </li>
-        {{/each}}
-    </ul>
-
-    <button type="submit">Order</button>
 </form>
+<button type="submit">Order</button>
