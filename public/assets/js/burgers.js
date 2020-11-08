@@ -17,12 +17,12 @@ $(function () {
       location.reload();
     });
   });
-  $(".change-status").on("click", function () {
+  $(".devourburger").on("click", function () {
     var id = $(this).data("id");
     var newStatus = $(this).data("newstatus");
 
     var newStatusState = {
-      devour: newStatus,
+      devoured: true,
     };
 
     //Send the put request

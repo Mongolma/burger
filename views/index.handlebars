@@ -11,18 +11,17 @@
 
 
 <li>
-    {{#each burger_name}}
+    {{burger_name}}
 
-    <button class="change-status" data-id="{{id}}" data-newstatus="{{devour}}">
-        {{#if devour}} Devour it!{{/if}}
+    <button class="change-status" data-id="{{id}}" data-newstatus="{{devoured}}">
+        {{#if devoured}} Devour it!{{/if}}
     </button>
-    {{/each}}
 </li>
 
 <ul>
     {{#each burger-name}}
-    {{#unless devour}}
-    {{> burgers devour=true}}
+    {{#unless devoured}}
+    {{> burgers devoured=true}}
     {{/unless}}
     {{/each}}
 </ul>
