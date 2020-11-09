@@ -19,7 +19,7 @@ $(function () {
   });
   $(".devourburger").on("click", function () {
     var id = $(this).data("id");
-    var newStatus = $(this).data("newstatus");
+    var newStatus = $(this).data("newburger");
 
     var newStatusState = {
       devoured: true,
@@ -29,10 +29,11 @@ $(function () {
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: newStatusState,
-    }).then(function () {
-      console.log("changed order to ", newStatus);
+    }).then(function (data) {
+      console.log("changed order to ", newStatusState);
+      console.log(data);
+
       //reload the page to get the updated list
-      location.reload();
-    });
+    }, location.reload());
   });
 });

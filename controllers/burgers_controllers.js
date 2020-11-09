@@ -1,8 +1,9 @@
 //Dependencies
 var express = require("express");
-
+var app = express();
+var path = require("path");
 var burger = require("../models/burger.js");
-
+app.use(express.static(path.join(__dirname, "public")));
 // Create an instance of for the express.Router app
 var router = express.Router();
 
